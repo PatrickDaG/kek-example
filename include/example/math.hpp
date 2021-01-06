@@ -38,12 +38,16 @@ Color& operator+=(Color& l, const Color& r) { return l = l + r; }
 
 Color operator*(const Color& l, double r) { return {l.r * r, l.g * r, l.b * r}; }
 
+Color operator*(const Color& l, const Color& r) { return {l.r * r.r, l.g * r.g, l.b * r.b}; }
+
 double dot(const Vector3& l, const Vector3& r) { return l.x * r.x + l.y * r.y + l.z * r.z; }
 
 Vector3 normalize(const Vector3& v) {
 	double l = sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
 	return v / l;
 }
+
+Vector3 reflect(const Vector3& dir, const Vector3& norm) { return dir - norm * 2 * dot(dir, norm); }
 
 double length(const Vector3& v) {
 	double l = sqrt(v.x * v.x + v.y * v.y + v.z * v.z);

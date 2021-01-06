@@ -19,8 +19,8 @@ namespace example {
 
 void generate_example_config() {
 	json j;
-	j["width"] = 1024;
-	j["height"] = 1024;
+	j["width"] = 2048;
+	j["height"] = 2048;
 	j["objects"] = {{{"type", "Sphere"},
 	                 {"color", {{"r", 1.0}, {"g", 1.0}, {"b", 1.0}}},
 	                 {"pos", {{"x", 1.0}, {"y", -1.0}, {"z", 10.0}}},

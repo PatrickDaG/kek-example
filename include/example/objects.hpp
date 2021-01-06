@@ -17,6 +17,7 @@ struct IntersectInfo {
 	Vector3 normal{0, 0, 0};
 	Color color{};
 	double metallic = 0, roughness = 0;
+	bool is_light;
 };
 
 class Object {
@@ -65,7 +66,7 @@ public:
 		}
 		auto hit_pos = (ray.dir * dist + ray.origin);
 		auto normal = normalize(hit_pos - pos);
-		return IntersectInfo{dist, hit_pos, normal, color, metallic, roughness};
+		return IntersectInfo{dist, hit_pos, normal, color, metallic, roughness, is_light};
 	}
 };
 }  // namespace example
